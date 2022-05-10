@@ -1,0 +1,119 @@
+// signup
+// form-group
+// form-control
+//  --error
+//  --valid
+// form-label
+// form-error
+// cta
+
+.signup {
+  width: 100%;
+  padding-top: 1.36rem;
+  
+  h3 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    padding-bottom: 2rem;
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  }
+  
+  &__form-group {
+    position: relative;
+    height: 7rem;
+    min-width: 50rem;
+  }
+
+  &__form-control {
+    height: 100%;
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1.6rem;
+    border: solid 1px #8c8c8c;
+    outline: none;
+
+    &--error {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 2px solid #ffa00a;
+    }
+
+    &--valid {
+      border-color: #5fa53f;
+    }
+    
+    &::placeholder {
+      color: transparent;
+      visibility: hidden;
+    }
+
+    &:focus + .signup__form-label, 
+    &:not(:placeholder-shown) + .signup__form-label  {
+      transform: translateY(-3rem);
+      font-size: 1.4rem;
+    }
+  }
+
+  &__form-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-1rem);
+    font-size: 1.6rem;
+    color: #8c8c8c;
+    pointer-events: none;
+    transition: all .2s;
+  }
+
+  &__form-error {
+    color: #ffa00a;
+    text-align: left;
+    margin-bottom: -6px;
+    padding: 6px 3px;
+    font-size: 1.5rem;
+  }
+
+  &__cta {
+    flex: 1;
+    
+    button {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 7rem;
+      width: 100%;
+      background-color: #e50914;
+      border: 0;
+      border-left: 2px solid #333;
+      border-radius: 2px;
+      font-size: 3rem;
+      color: #fff;
+
+      &:hover {
+        background-color: #f40612;
+      }
+    }
+  }
+
+  &__cta-svg {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    margin: 0 0 0 1.5rem;
+  
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      fill: #fff;
+    }
+  }
+}
