@@ -1,0 +1,27 @@
+.download-tile { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10.4rem;
+  width: 100%;
+  border: 2px solid rgba(255,255,255,.25);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  background-color: #000;
+  
+  &__boxImage {
+    height: 8rem;
+    margin-right: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    margin-right: 6rem;
+  }
+
+  &__boxGif {
+    height: 6rem;
+  }
+
+}
