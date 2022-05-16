@@ -42,16 +42,16 @@
     }
   }
 
-  &__image {
+  &__image-container {
     position: relative;
     width: 48%;
-    
-    img {
-      position: relative;
-      height: auto;
-      width: 100%;
-      z-index: 100;
-    }
+  }
+
+  &__img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    z-index: 100;
   }
 
   &__animation {
@@ -61,6 +61,20 @@
       top: 20.5%;
       left: 12.5%;
       height: 55.4%;
+    }
+
+    &--video2 {
+      top: 10.5%;
+      left: 18.5%;
+      height: 46.4%;
+    }
+
+    &--download {
+      left: 50%;
+      bottom: 8%;
+      transform: translateX(-50%);
+      width: 63%;
+      z-index: 100;
     }
   }
 }

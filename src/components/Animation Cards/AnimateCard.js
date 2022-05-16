@@ -1,18 +1,15 @@
 import "./AnimateCard.scss";
 
 const AnimateCard = (props) => {
-  const isReversed = props.reverse;
-  const hasVideo = props.hasVideo;
-  
-  let containerClass = isReversed
+  let containerClass = props.reverseRow
     ? "animate-card__content animate-card__content--reverse"
     : "animate-card__content";
-  let textClass = isReversed
+  let textClass = props.reverseRow
     ? "animate-card__text animate-card__text--padRight"
     : "animate-card__text";
-  let animateContainerClass = hasVideo
-    ? "animate-card__animation animate-card__animation--video"
-    : "animate-card__animation animate-card__animation--download";
+  let animateContainerClass = props.modifierClass
+    ? `animate-card__animation ${props.modifierClass}`
+    : "animate-card__animation";
 
   return (
     <div className="animate-card">
@@ -21,11 +18,9 @@ const AnimateCard = (props) => {
           <h1>{props.title}</h1>
           <h2>{props.text}</h2>
         </div>
-        <div className="animate-card__image">
+        <div className="animate-card__image-container">
           <img className="animate-card__img" src={props.image} />
-          <div className={animateContainerClass}>
-            {props.children}
-          </div>
+          <div className={animateContainerClass}>{props.children}</div>
         </div>
       </div>
     </div>
