@@ -54,6 +54,23 @@
     z-index: 100;
   }
 
+  &__animation-container {
+    position: relative;
+    width: 100%;
+  
+    &--tv {
+      margin: -10% -5% -5% 0;
+    }
+
+    &--mobile {
+      margin: -8% 0 -4% -15%;
+    }
+
+    &--device {
+      margin: -5% -10% 0 0;
+    }
+  }
+
   &__animation {
     position: absolute;
 
