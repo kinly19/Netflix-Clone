@@ -28,7 +28,7 @@ const Accordion = (props) => {
           {title} <ThinXIcon />
         </button>
         <div className={listToggleClass}>
-          <span>{content}</span>
+          <div className="accordion__text-content">{content}</div>
         </div>
       </li>
     );
