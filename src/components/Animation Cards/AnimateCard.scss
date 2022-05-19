@@ -94,3 +94,42 @@
     }
   }
 }
+
+@media screen and (max-width: 60em) {
+  .animate-card {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__text {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+    }
+
+    &__image-container {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 1em;
+      overflow: hidden;
+    }
+
+    &__animation-container {
+     &--mobile {
+      margin: -8% 0 -4% 0%;
+     }
+    }
+  }
+}
+
+@media screen and (max-width: 34.375em) {
+  .animate-card {
+    h1 {
+      font-size: 3.6rem;
+    }
+  
+    h2 {
+      font-size: 2.8rem; 
+    }
+  }
+}
