@@ -65,3 +65,9 @@
     padding: 2.8rem 5.72rem 2.8rem 3.12rem;
   }
 }
+
+@media screen and (max-width: 34.375em) {
+  .accordion {
+    width: 100%;
+  }
+}
