@@ -41,3 +41,16 @@
     }
   }
 }
+
+@media screen and (max-width: 34.375em) {
+  .hero {
+    h1 {
+      font-size: 3.7rem;
+      line-height: 4.3rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+}
