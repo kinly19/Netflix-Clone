@@ -46,14 +46,16 @@ const Signup = () => {
       </h3>
       <div className="signup__form-container">
         <div className="signup__form-group">
-          <input
-            type="text"
-            className={formInputClass}
-            placeholder="user@provider.com"
-            onBlur={onBlurHandler}
-            onChange={emailChangeHandler}
-          />
-          <label className="signup__form-label">Email address</label>
+          <div className="signup__input-wrap">
+            <input
+              type="text"
+              className={formInputClass}
+              placeholder="user@provider.com"
+              onBlur={onBlurHandler}
+              onChange={emailChangeHandler}
+            />
+            <label className="signup__form-label">Email address</label>
+          </div>
           {showErrorContent}
         </div>
         <div className="signup__cta">
