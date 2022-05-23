@@ -121,3 +121,64 @@
     }
   }
 }
+
+@media screen and (max-width: 60em) {
+  .signup {
+
+    h3 {
+      padding: 0 10%;
+      font-size: 2.9rem;
+    }
+
+    &__form-container {
+      flex-direction: column;
+    }
+
+    &__form-group {
+      min-width: 62.5rem;
+      margin: 1rem auto;
+    }
+
+    &__form-control {
+      font-size: 2.3rem;
+    }
+
+    &__cta {
+      margin: 0 auto;
+
+      button {
+        min-height: 5rem;
+        min-width: 16.439rem;
+        border: none;
+        margin: 0.56rem 0;
+        padding: 0 2rem;
+        font-size: 2.3rem;
+      }
+    }
+
+    &__form-error {
+      font-size: 1.9rem;
+    }
+
+    &__cta-svg {
+      position: relative;
+      display: inline-block;
+      height: 12px;
+      margin: 0 0 0 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 34.375em) {
+  .signup {
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    &__form-group {
+      min-width: 40rem;
+      width: 100%;
+    }
+  }
+}
