@@ -1,0 +1,54 @@
+.navSec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2.5rem 5.6rem 0 5.6rem;
+
+  &__logo {
+    height: 100%;
+    width: 16.7rem;
+    fill: #e50914;
+  }
+
+  &__link {
+    background-color: #e50914;
+    padding: .7rem 1.7rem;
+    border-radius: 3px;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 87.500em) {
+  .navSec {
+    &__logo {
+      width: 13.4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .navSec {
+    padding: 2.5rem 4.5rem 0 4.5rem;
+    &__logo {
+      width: 10.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 34.375em) {
+  .navSec {
+
+    padding: 2rem 10% 0 10%;
+    &__logo {
+      width: 25%;
+    }
+
+    &__link {
+      padding: .4rem .8rem;
+      font-size: 1.44rem;
+    }
+  }
+}
