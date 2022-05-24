@@ -119,42 +119,46 @@
   }
 }
 
-@media screen and (max-width: 60em) {
+@media screen and (max-width: 87.500em) {
   .signup {
+    &__form-control {
+      height: 6rem;
+      font-size: 1.6rem;
 
-    h3 {
-      padding: 0 10%;
-      font-size: 2.9rem;
+      &:focus + .signup__form-label, 
+      &:not(:placeholder-shown) + .signup__form-label  {
+        transform: translateY(-2.5rem);
+      }
     }
 
+    &__cta {
+      button {
+        min-height: 6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .signup {
     &__form-container {
       flex-direction: column;
     }
 
     &__form-group {
-      min-width: 62.5rem;
       margin: 1rem auto;
-    }
-
-    &__form-control {
-      font-size: 2.3rem;
     }
 
     &__cta {
       margin: 0 auto;
 
       button {
-        min-height: 5rem;
-        min-width: 16.439rem;
+        min-height: 4rem;
         border: none;
-        margin: 0.56rem 0;
+        margin: 0.4rem 0;
         padding: 0 2rem;
-        font-size: 2.3rem;
+        font-size: 1.6rem;
       }
-    }
-
-    &__form-error {
-      font-size: 1.9rem;
     }
 
     &__cta-svg {
@@ -166,16 +170,46 @@
   }
 }
 
+@media screen and (max-width:38.125em) {
+  .signup {
+
+    &__form-group {
+      width: 100%;
+    }
+
+    &__form-control {
+      height: 4.8rem;
+      min-width: 40rem;
+      width: 100%;
+
+      &:focus + .signup__form-label, 
+      &:not(:placeholder-shown) + .signup__form-label  {
+        transform: translateY(-2rem);
+        font-size: 1.2rem;
+      }
+    }
+
+    &__form-label {
+      font-size: 1.4rem;
+    }
+  }
+}
+
 @media screen and (max-width: 34.375em) {
   .signup {
 
     h3 {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
+      padding: 0 10%
     }
 
     &__form-group {
-      min-width: 40rem;
+      min-width: 20rem;
       width: 100%;
+    }
+
+    &__form-control {
+      min-width: 15rem;
     }
   }
 }
