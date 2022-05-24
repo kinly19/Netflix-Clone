@@ -37,20 +37,38 @@
     h2 {
       font-size: 2.6rem;
       font-weight: 500;
-      margin: 1.625rem auto;
+      margin: 1.6rem auto;
+    }
+  }
+}
+
+@media screen and (max-width: 87.500em) {
+  .hero {
+    h1 {
+      font-size: 5rem;
+      line-height: 5.5rem;
+    }
+
+    h2 {
+      font-size: 2.6rem;
     }
   }
 }
 
 @media screen and (max-width: 34.375em) {
   .hero {
+    height: 54.439rem;
+    &__overlay {
+      padding: 5rem 5%;
+    }
+
     h1 {
-      font-size: 3.7rem;
-      line-height: 4.3rem;
+      font-size: 2.8rem;
+      line-height: 3.08rem;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
     }
   }
 }
