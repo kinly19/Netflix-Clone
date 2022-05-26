@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ReactComponent as ChevronRight } from '../../assets/Images/chevron-right.svg';
-import "./Signup.scss";
+import "./Lookup.scss";
 
 const Signup = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [onBlur, setOnBlur] = useState(false);
+  const emailRef = useRef();
 
   const emailIsValid = enteredEmail.length >= 4 && enteredEmail.trim().includes("@");
   const EmailHasError = !emailIsValid && onBlur;
@@ -19,6 +20,20 @@ const Signup = () => {
       setOnBlur(true);
     }
   };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
+    if (!emailIsValid) {
+      setOnBlur(true);
+      emailRef.current.focus();
+      console.log("Form error cannot sumbit")
+    }
+
+    if (emailIsValid) {
+      console.log("Form submit!")
+    }
+  }
 
   // Style classes
   let formInputClass = "signup__form-control"
@@ -40,7 +55,7 @@ const Signup = () => {
   );
 
   return (
-    <form className="signup">
+    <form className="signup" onSubmit={onSubmitHandler}>
       <h3>
         Ready to watch? Enter your email to create or restart your membership
       </h3>
@@ -48,6 +63,7 @@ const Signup = () => {
         <div className="signup__form-group">
           <div className="signup__input-wrap">
             <input
+              ref={emailRef}
               type="text"
               className={formInputClass}
               placeholder="user@provider.com"
