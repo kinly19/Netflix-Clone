@@ -1,5 +1,5 @@
 import storybg from "../../assets/Images/storybg.jpg";
-import Signup from "../Signup/Signup";
+import Lookup from "../Lookup/Lookup";
 import "./StoryHero.scss";
 
 const StoryHero = () => {
@@ -9,7 +9,7 @@ const StoryHero = () => {
         <div className="hero__text">
           <h1>Unlimited films, TV programmes and more.</h1>
           <h2>Watch anywhere. Cancel at any time.</h2>
-          <Signup />
+          <Lookup />
         </div>
       </div>
     </div>
