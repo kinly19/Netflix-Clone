@@ -1,4 +1,4 @@
-// signup
+// lookup
 // form-container
 // form-group
 // input-wrap
@@ -10,7 +10,7 @@
 // cta
 // cta-svg
 
-.signup {
+.lookup {
   max-width: 75rem;
   width: 100%;
   margin: 0 auto;
@@ -55,8 +55,8 @@
       visibility: hidden;
     }
 
-    &:focus + .signup__form-label, 
-    &:not(:placeholder-shown) + .signup__form-label  {
+    &:focus + .lookup__form-label, 
+    &:not(:placeholder-shown) + .lookup__form-label  {
       transform: translateY(-3rem);
       font-size: 1.4rem;
     }
@@ -120,13 +120,13 @@
 }
 
 @media screen and (max-width: 87.500em) {
-  .signup {
+  .lookup {
     &__form-control {
       height: 6rem;
       font-size: 1.6rem;
 
-      &:focus + .signup__form-label, 
-      &:not(:placeholder-shown) + .signup__form-label  {
+      &:focus + .lookup__form-label, 
+      &:not(:placeholder-shown) + .lookup__form-label  {
         transform: translateY(-2.5rem);
       }
     }
@@ -140,7 +140,7 @@
 }
 
 @media screen and (max-width: 60em) {
-  .signup {
+  .lookup {
     &__form-container {
       flex-direction: column;
     }
@@ -171,7 +171,7 @@
 }
 
 @media screen and (max-width:38.125em) {
-  .signup {
+  .lookup {
 
     &__form-group {
       width: 100%;
@@ -182,8 +182,8 @@
       min-width: 40rem;
       width: 100%;
 
-      &:focus + .signup__form-label, 
-      &:not(:placeholder-shown) + .signup__form-label  {
+      &:focus + .lookup__form-label, 
+      &:not(:placeholder-shown) + .lookup__form-label  {
         transform: translateY(-2rem);
         font-size: 1.2rem;
       }
@@ -196,7 +196,7 @@
 }
 
 @media screen and (max-width: 34.375em) {
-  .signup {
+  .lookup {
 
     h3 {
       font-size: 1.8rem;
