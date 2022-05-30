@@ -1,0 +1,30 @@
+// checkList
+// __items
+
+.checkList {
+  max-width: 30rem;
+  margin: 0 auto;
+
+  > li:not(:first-child) {
+    margin-top: 2.4rem;
+  }
+
+  &__items {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 2rem;
+
+    svg {
+      height: 3.5rem;
+      width: auto;
+      color: #e50914;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
+}
