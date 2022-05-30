@@ -36,11 +36,11 @@ const Signup = () => {
   }
 
   // Style classes
-  let formInputClass = "signup__form-control"
+  let formInputClass = "lookup__form-control"
   if (EmailHasError) {
-    formInputClass = "signup__form-control signup__form-control--error";
+    formInputClass = "lookup__form-control lookup__form-control--error";
   } else if (emailIsValid) {
-    formInputClass = "signup__form-control signup__form-control--valid";
+    formInputClass = "lookup__form-control lookup__form-control--valid";
   }
 
   const inputErrorMsg =
@@ -49,19 +49,19 @@ const Signup = () => {
       : `Please enter a valid email address`;
 
   const showErrorContent = EmailHasError && (
-    <div className="signup__form-error">
+    <div className="lookup__form-error">
       <p>{inputErrorMsg}</p>
     </div>
   );
 
   return (
-    <form className="signup" onSubmit={onSubmitHandler}>
+    <form className="lookup" onSubmit={onSubmitHandler}>
       <h3>
         Ready to watch? Enter your email to create or restart your membership
       </h3>
-      <div className="signup__form-container">
-        <div className="signup__form-group">
-          <div className="signup__input-wrap">
+      <div className="lookup__form-container">
+        <div className="lookup__form-group">
+          <div className="lookup__input-wrap">
             <input
               ref={emailRef}
               type="text"
@@ -70,14 +70,14 @@ const Signup = () => {
               onBlur={onBlurHandler}
               onChange={emailChangeHandler}
             />
-            <label className="signup__form-label">Email address</label>
+            <label className="lookup__form-label">Email address</label>
           </div>
           {showErrorContent}
         </div>
-        <div className="signup__cta">
+        <div className="lookup__cta">
           <button>
             Get Started
-            <span className="signup__cta-svg">
+            <span className="lookup__cta-svg">
               <ChevronRight />
             </span>
           </button>
@@ -87,4 +87,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Lookup;
