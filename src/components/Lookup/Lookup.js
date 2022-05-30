@@ -1,11 +1,13 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as ChevronRight } from '../../assets/Images/chevron-right.svg';
 import "./Lookup.scss";
 
-const Signup = () => {
+const Lookup = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [onBlur, setOnBlur] = useState(false);
   const emailRef = useRef();
+  let navigate = useNavigate()
 
   const emailIsValid = enteredEmail.length >= 4 && enteredEmail.trim().includes("@");
   const EmailHasError = !emailIsValid && onBlur;
@@ -27,11 +29,10 @@ const Signup = () => {
     if (!emailIsValid) {
       setOnBlur(true);
       emailRef.current.focus();
-      console.log("Form error cannot sumbit")
     }
 
     if (emailIsValid) {
-      console.log("Form submit!")
+      navigate("/signup");
     }
   }
 
