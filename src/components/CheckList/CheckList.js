@@ -1,4 +1,4 @@
-import { ReactComponent as CheckSvg } from '../../assets/Images/check.svg'
+import { ReactComponent as CheckSvg } from '../../assets/Svg/check.svg'
 import "./CheckList.scss";
 
 const CheckList = (props) => {

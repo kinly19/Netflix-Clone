@@ -1,19 +1,18 @@
 import "./NavSecondary.scss";
 import { Link } from 'react-router-dom';
-import { ReactComponent as NetflixLogo } from '../../assets/Images/Netflix.svg';
+import { ReactComponent as NetflixLogo } from '../../assets/Svg/Netflix.svg';
 
 const NavSecondary = (props) => {
-      
-  let navClass = "navSec"
-  let logoClass = "navSec__logo"
-  let linkClass = "navSec__link"    
+  let navClass = "navSec";
+  let logoClass = "navSec__logo";
+  let linkClass = "navSec__link";
 
   if (props.navType === "light") {
-    navClass = "navSec navSec--borderBtm"
-    logoClass = "navSec__logo navSec__logo--small"
-    linkClass = "navSec__link navSec__link--light"
+    navClass = "navSec navSec--borderBtm";
+    logoClass = "navSec__logo navSec__logo--small";
+    linkClass = "navSec__link navSec__link--light";
   }
-  
+
   return (
     <nav className={navClass}>
       <div className={logoClass}>
@@ -23,7 +22,7 @@ const NavSecondary = (props) => {
         Sign in
       </Link>
     </nav>
-  )
-}
+  );
+};
 
 export default NavSecondary;

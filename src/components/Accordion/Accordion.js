@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ReactComponent as ThinXIcon } from "../../assets/Images/thin-x.svg";
+import { ReactComponent as ThinXIcon } from "../../assets/Svg/thin-x.svg";
 import "./Accordion.scss";
 
 const Accordion = (props) => {
