@@ -44,23 +44,21 @@ const Lookup = () => {
 
   return (
     <form className="lookup" onSubmit={onSubmitHandler}>
-      <h3>
-        Ready to watch? Enter your email to create or restart your membership
-      </h3>
+      <h3>Ready to watch? Enter your email to create or restart your membership</h3>
       <div className="lookup__form-container">
-        <div className="lookup__form-group">
-          <div className="lookup__input-wrap">
-            <input
-              ref={emailRef}
-              type="text"
-              className={formInputClass}
-              placeholder="user@provider.com"
-              onBlur={onBlurHandler}
-              onChange={emailChangeHandler}
-            />
-            <label className="lookup__form-label">Email address</label>
-          </div>
-          {showErrorContent}
+        <div className="lookup__form-content">
+          <InputField
+            ref={emailRef}
+            inputCtnClass={"lookup"}
+            type={"text"}
+            label={"Email Address"}
+            inputIsValid={emailIsValid}
+            inputHasError={EmailHasError}
+            errClass={"main"}
+            errMsg={inputErrorMsg}
+            onBlurHandler={onBlurHandler}
+            onChangeHandler={emailChangeHandler}
+          />
         </div>
         <div className="lookup__cta">
           <button>
