@@ -1,16 +1,27 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+// Custom components
+import InputField from "../Input/InputField";
+// Assets
 import { ReactComponent as ChevronRight } from '../../assets/Svg/chevron-right.svg';
 import "./Lookup.scss";
 
 const Lookup = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [onBlur, setOnBlur] = useState(false);
-  const emailRef = useRef();
-  let navigate = useNavigate()
 
+  let navigate = useNavigate();
+  const emailRef = useRef();
+
+  // Input Validation
   const emailIsValid = enteredEmail.length >= 4 && enteredEmail.trim().includes("@");
   const EmailHasError = !emailIsValid && onBlur;
+
+  // Error message
+  const inputErrorMsg =
+  enteredEmail.length <= 4
+    ? `Email is required`
+    : `Please enter a valid email address`;
 
   // Handlers
   const emailChangeHandler = (e) => {
@@ -18,42 +29,18 @@ const Lookup = () => {
   };
 
   const onBlurHandler = () => {
-    if (enteredEmail !== "") {
-      setOnBlur(true);
-    }
+    if (enteredEmail !== "") setOnBlur(true);
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-
     if (!emailIsValid) {
       setOnBlur(true);
       emailRef.current.focus();
+      return;
     }
-
-    if (emailIsValid) {
-      navigate("/signup/intro");
-    }
+    navigate("/signup/intro");
   }
-
-  // Style classes
-  let formInputClass = "lookup__form-control"
-  if (EmailHasError) {
-    formInputClass = "lookup__form-control lookup__form-control--error";
-  } else if (emailIsValid) {
-    formInputClass = "lookup__form-control lookup__form-control--valid";
-  }
-
-  const inputErrorMsg =
-    enteredEmail.length <= 4
-      ? `Email is required`
-      : `Please enter a valid email address`;
-
-  const showErrorContent = EmailHasError && (
-    <div className="lookup__form-error">
-      <p>{inputErrorMsg}</p>
-    </div>
-  );
 
   return (
     <form className="lookup" onSubmit={onSubmitHandler}>
