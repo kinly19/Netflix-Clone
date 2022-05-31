@@ -1,0 +1,138 @@
+// inputField
+// __groups
+// __control
+// __label
+// __btn
+// __error
+
+.inputField {
+  max-width: 75rem;
+  width: 100%;
+  margin: 0 auto;
+
+  &__groups {
+    position: relative;
+    height: 7rem;
+
+    &:focus-within {
+      .inputField__btn {
+        display: block;
+      }
+    }
+  }
+
+  &__control {
+    height: 100%;
+    width: 100%;
+    padding: 1rem 1rem 0 1rem;
+    font-size: 1.6rem;
+    outline: none;
+
+    &--error-main {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 2px solid #ffa00a;
+    }
+
+    &--error-sec {
+      border-color: #b92d2b;
+    }
+
+    &--valid {
+      border-color: #5fa53f;
+    }
+
+    &::placeholder {
+      color: transparent;
+      visibility: hidden;
+    }
+
+    &:focus + .inputField__label,
+    &:not(:placeholder-shown) + .inputField__label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      top: 1.5rem;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 1rem;
+    font-size: 1.6rem;
+    color: #8c8c8c;
+    pointer-events: none;
+    transition: all .2s;
+  }
+
+  &__btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    height: 100%;
+    background-color: transparent;
+    padding: 0 1.2rem;
+    border: none;
+    font-size: 1.4rem;
+    color: #8c8c8c;
+  }
+
+  &__error {
+    color: #ffa00a;
+    text-align: left;
+    padding: 6px 3px;
+    font-size: 1.5rem;
+  }
+}
+
+
+
+@media screen and (max-width: 87.500em) {
+  .inputField {
+    &__groups {
+      &--lookup {
+        height: 6rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .inputField {
+    &__groups {
+      &--lookup {
+        height: 6rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:38.125em) {
+  .inputField {
+
+    &__groups {
+      &--lookup {
+        height: 4.8rem;
+        width: 100%;
+      }
+    }
+
+    &__control {
+      &:focus + .inputField__label,
+      &:not(:placeholder-shown) + .inputField__label {
+      font-size: 1.1rem;
+      top: 1.1rem;
+      }
+    }
+
+    &__label {
+      font-size: 1.4rem;
+    }
+  }
+}
