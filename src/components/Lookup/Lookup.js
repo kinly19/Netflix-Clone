@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as ChevronRight } from '../../assets/Images/chevron-right.svg';
+import { ReactComponent as ChevronRight } from '../../assets/Svg/chevron-right.svg';
 import "./Lookup.scss";
 
 const Lookup = () => {
@@ -32,7 +32,7 @@ const Lookup = () => {
     }
 
     if (emailIsValid) {
-      navigate("/signup");
+      navigate("/signup/intro");
     }
   }
 
