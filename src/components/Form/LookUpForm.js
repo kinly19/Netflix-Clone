@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import InputField from "../Input/InputField";
 // Assets
 import { ReactComponent as ChevronRight } from '../../assets/Svg/chevron-right.svg';
-import "./Lookup.scss";
+import "./LookUpForm.scss";
 
-const Lookup = () => {
+const LookUpForm = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [onBlur, setOnBlur] = useState(false);
 
@@ -73,4 +73,4 @@ const Lookup = () => {
   );
 };
 
-export default Lookup;
+export default LookUpForm;
