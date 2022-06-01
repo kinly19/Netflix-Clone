@@ -141,5 +141,13 @@
     h2 {
       font-size: 1.8rem; 
     }
+
+    &__animation {
+      &--download {
+        width: 70%;
+        min-width: 28rem;
+        z-index: 100;
+      }
+    }
   }
 }
