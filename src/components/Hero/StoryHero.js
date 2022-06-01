@@ -1,5 +1,5 @@
 import storybg from "../../assets/Images/storybg.jpg";
-import Lookup from "../Lookup/Lookup";
+import LookUpForm from "../Form/LookUpForm";
 import "./StoryHero.scss";
 
 const StoryHero = () => {
@@ -9,7 +9,7 @@ const StoryHero = () => {
         <div className="hero__text">
           <h1>Unlimited films, TV programmes and more.</h1>
           <h2>Watch anywhere. Cancel at any time.</h2>
-          <Lookup />
+          <LookUpForm />
         </div>
       </div>
     </div>
