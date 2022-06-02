@@ -14,6 +14,10 @@
     position: relative;
     height: 7rem;
 
+    &--signup {
+      height: 6rem;
+    }
+
     &:focus-within {
       .inputField__btn {
         display: block;
@@ -36,11 +40,11 @@
     }
 
     &--error-sec {
-      border-color: #b92d2b;
+      border: 1px solid #b92d2b;
     }
 
     &--valid {
-      border-color: #5fa53f;
+      border: 1px solid #5fa53f;
     }
 
     &::placeholder {
@@ -86,6 +90,11 @@
     text-align: left;
     padding: 6px 3px;
     font-size: 1.5rem;
+
+    &--error-sec {
+      font-size: 1.3rem;
+      color: #b92d2b;
+    }
   }
 }
 
