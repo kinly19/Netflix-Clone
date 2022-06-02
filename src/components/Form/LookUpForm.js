@@ -55,6 +55,7 @@ const LookUpForm = () => {
             inputIsValid={emailIsValid}
             inputHasError={EmailHasError}
             errClass={"main"}
+            errMsgClass={"inputField__error"}
             errMsg={inputErrorMsg}
             onBlurHandler={onBlurHandler}
             onChangeHandler={emailChangeHandler}
