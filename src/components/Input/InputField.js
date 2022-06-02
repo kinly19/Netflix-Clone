@@ -10,7 +10,19 @@ const InputField = React.forwardRef((props, ref) => {
   const hasErrClass = props.errClass === "main";
   const hasButton = props.enableButton;
 
-// Class styles
+// Handler
+  const showPasswordHandler = (e) => {
+    e.preventDefault()
+    if (btnTitle === "SHOW" && inputType === "password") {
+      setBtnTitle("HIDE");
+      setInputType("text");
+    } else {
+      setBtnTitle("SHOW");
+      setInputType("password");
+    }
+  };
+
+  // Class styles
   let inputClass = inputHasError
     ? "inputField__control inputField__control--error-sec"
     : "inputField__control";
@@ -26,9 +38,9 @@ const InputField = React.forwardRef((props, ref) => {
     ? `inputField__groups inputField__groups--${props.inputCtnClass}`
     : "inputField__groups";
 
-// Conditional content
+  // Conditional content
   const showErrorContent = inputHasError && (
-    <div className="inputField__error">
+    <div className={props.errMsgClass}>
       <p>{props.errMsg}</p>
     </div>
   );
@@ -38,16 +50,6 @@ const InputField = React.forwardRef((props, ref) => {
       {btnTitle}
     </button>
   );
-
-  const showPasswordHandler = () => {
-    if (btnTitle === "SHOW" && inputType === "password") {
-      setBtnTitle("HIDE");
-      setInputType("text");
-    } else {
-      setBtnTitle("SHOW");
-      setInputType("password");
-    }
-  };
 
   return (
     <div className="inputField">
