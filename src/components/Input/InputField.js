@@ -7,7 +7,6 @@ const InputField = React.forwardRef((props, ref) => {
 
   const inputIsValid = props.inputIsValid;
   const inputHasError = props.inputHasError;
-  const hasErrClass = props.errClass === "main";
   const hasButton = props.enableButton;
 
 // Handler
@@ -22,25 +21,16 @@ const InputField = React.forwardRef((props, ref) => {
     }
   };
 
-  // Class styles
-  let inputClass = inputHasError
-    ? "inputField__control inputField__control--error-sec"
-    : "inputField__control";
+// Class styles
+  let controlClass = inputHasError
+    ? `${props.controlClass}`
+    : `inputField__control`;
 
-  if (hasErrClass && inputHasError) {
-    inputClass = "inputField__control inputField__control--error-main";
-  }
+  if (inputIsValid) controlClass = "inputField__control inputField__control--valid";
 
-  if (inputIsValid) inputClass = "inputField__control inputField__control--valid";
-
-// Input container class
-  let inputCtnClass = props.inputCtnClass
-    ? `inputField__groups inputField__groups--${props.inputCtnClass}`
-    : "inputField__groups";
-
-  // Conditional content
+// Conditional content
   const showErrorContent = inputHasError && (
-    <div className={props.errMsgClass}>
+    <div className={props.errorClass}>
       <p>{props.errMsg}</p>
     </div>
   );
@@ -53,10 +43,10 @@ const InputField = React.forwardRef((props, ref) => {
 
   return (
     <div className="inputField">
-      <div className={inputCtnClass}>
+      <div className={props.groupsClass}>
         <input
           ref={ref}
-          className={inputClass}
+          className={controlClass}
           placeholder="..."
           type={inputType}
           onBlur={props.onBlurHandler}
