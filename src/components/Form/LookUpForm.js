@@ -1,46 +1,41 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 // Custom components
+import useInput from "../../hooks/useInput";
 import InputField from "../Input/InputField";
 // Assets
-import { ReactComponent as ChevronRight } from '../../assets/Svg/chevron-right.svg';
+import { ReactComponent as ChevronRight } from "../../assets/Svg/chevron-right.svg";
 import "./LookUpForm.scss";
 
 const LookUpForm = () => {
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [onBlur, setOnBlur] = useState(false);
+  // Custom Hook
+  const {
+    inputValue: enteredEmail,
+    inputIsValid: emailIsValid,
+    inputError: emailHasError,
+    setInputTouched,
+    inputChangeHandler,
+    blurHandler,
+  } = useInput((inputValue) => inputValue.length >= 4 && inputValue.includes("@"));
 
   let navigate = useNavigate();
   const emailRef = useRef();
 
-  // Input Validation
-  const emailIsValid = enteredEmail.length >= 4 && enteredEmail.trim().includes("@");
-  const EmailHasError = !emailIsValid && onBlur;
-
   // Error message
   const inputErrorMsg =
-  enteredEmail.length <= 4
-    ? `Email is required`
-    : `Please enter a valid email address`;
-
-  // Handlers
-  const emailChangeHandler = (e) => {
-    setEnteredEmail(e.target.value);
-  };
-
-  const onBlurHandler = () => {
-    if (enteredEmail !== "") setOnBlur(true);
-  };
+    enteredEmail.length <= 4
+      ? `Email is required`
+      : `Please enter a valid email address`;
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     if (!emailIsValid) {
-      setOnBlur(true);
+      setInputTouched(true);
       emailRef.current.focus();
       return;
     }
     navigate("/signup/intro");
-  }
+  };
 
   return (
     <form className="lookup" onSubmit={onSubmitHandler}>
@@ -54,11 +49,11 @@ const LookUpForm = () => {
             type={"text"}
             label={"Email Address"}
             inputIsValid={emailIsValid}
-            inputHasError={EmailHasError}
+            inputHasError={emailHasError}
             errorClass={"inputField__error"}
             errMsg={inputErrorMsg}
-            onBlurHandler={onBlurHandler}
-            onChangeHandler={emailChangeHandler}
+            onBlurHandler={blurHandler}
+            onChangeHandler={inputChangeHandler}
           />
         </div>
         <div className="lookup__cta">
