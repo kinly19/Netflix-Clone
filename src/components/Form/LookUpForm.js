@@ -49,13 +49,13 @@ const LookUpForm = () => {
         <div className="lookup__form-content">
           <InputField
             ref={emailRef}
-            inputCtnClass={"lookup"}
+            groupsClass={"inputField__groups inputField__groups--lookup"}
+            controlClass={"inputField__control inputField__control--error-main"}
             type={"text"}
             label={"Email Address"}
             inputIsValid={emailIsValid}
             inputHasError={EmailHasError}
-            errClass={"main"}
-            errMsgClass={"inputField__error"}
+            errorClass={"inputField__error"}
             errMsg={inputErrorMsg}
             onBlurHandler={onBlurHandler}
             onChangeHandler={emailChangeHandler}
