@@ -7,7 +7,7 @@ import InputField from "../Input/InputField";
 import "./RegistrationForm.scss";
 
 const RegistrationForm = () => {
-
+  // Custom hook
   const {
     inputValue: enteredEmail,
     inputIsValid: emailIsValid,
@@ -17,6 +17,7 @@ const RegistrationForm = () => {
     blurHandler: emailBlurHandler,
   } = useInput((inputValue) => inputValue.length >= 5 && inputValue.includes("@"));
 
+  // Custom hook
   const {
     inputValue: enteredPassword,
     inputIsValid: passwordIsValid,
@@ -29,20 +30,20 @@ const RegistrationForm = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  let emailErrMsg = "Email is required.";
-  if (enteredEmail.length >= 1) {
-    emailErrMsg =
-      enteredEmail.length >= 5
-        ? "Please enter a valid email address."
-        : "Email should be between 5 and 50 characters.";
-  }
+  // Error message
+  let emailErrMsg =
+    enteredEmail.length < 1
+      ? "Email is required."
+      : enteredEmail.length < 5
+      ? "Email should be between 5 and 50 characters."
+      : "Please enter a valid email address.";
 
   let passwordErrMsg =
     enteredPassword.length >= 1
       ? "Password should be between 6 and 60 characters long."
       : "Password is required.";
 
-// Handler
+  // Handler
   const submitHandler = (e) => {
     e.preventDefault();
     if (!emailIsValid) {
