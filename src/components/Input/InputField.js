@@ -22,11 +22,9 @@ const InputField = React.forwardRef((props, ref) => {
   };
 
 // Class styles
-  let controlClass = inputHasError
-    ? `${props.controlClass}`
-    : `inputField__control`;
-
-  if (inputIsValid) controlClass = "inputField__control inputField__control--valid";
+  let controlClass = "inputField__control"
+  if (inputHasError) controlClass = props.controlClass
+  if (inputIsValid) controlClass = "inputField__control inputField__control--valid"
 
 // Conditional content
   const showErrorContent = inputHasError && (
