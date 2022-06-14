@@ -3,14 +3,22 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as NetflixLogo } from '../../assets/Svg/Netflix.svg';
 
 const NavSecondary = (props) => {
-  let navClass = "navSec";
-  let logoClass = "navSec__logo";
+  // Main nav class
+  let navClass = "navSec navSec--main";
+  let logoClass = "navSec__logo navSec__logo--dynamic";
   let linkClass = "navSec__link";
 
+  // Light nav class
   if (props.navType === "light") {
-    navClass = "navSec navSec--borderBtm";
+    navClass = "navSec navSec--light";
     logoClass = "navSec__logo navSec__logo--small";
     linkClass = "navSec__link navSec__link--light";
+  }
+
+  // Basic nav class
+  if (props.navType === "basic") {
+    navClass = "navSec navSec--basic";
+    logoClass = "navSec__logo";
   }
 
   return (
