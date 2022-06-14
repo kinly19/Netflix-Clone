@@ -1,6 +1,6 @@
 import "./NavSecondary.scss";
-import { Link } from 'react-router-dom';
-import { ReactComponent as NetflixLogo } from '../../assets/Svg/Netflix.svg';
+import { Link } from "react-router-dom";
+import { ReactComponent as NetflixLogo } from "../../assets/Svg/Netflix.svg";
 
 const NavSecondary = (props) => {
   // Main nav class
@@ -26,9 +26,12 @@ const NavSecondary = (props) => {
       <div className={logoClass}>
         <NetflixLogo />
       </div>
-      <Link className={linkClass} to={"login"}>
-        Sign in
-      </Link>
+
+      {props.navType !== "basic" && (
+        <Link className={linkClass} to={"/signup/form/login"}>
+          Sign in
+        </Link>
+      )}
     </nav>
   );
 };
