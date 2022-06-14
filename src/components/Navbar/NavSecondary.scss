@@ -3,16 +3,33 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 2.5rem 5.6rem;
+  
+  &--main {
+    padding: 2.5rem 5.6rem;
+  }
 
-  &--borderBtm {
+  &--light {
     border-bottom: 1px solid #e6e6e6;
+    padding: 2.1rem 3%;
+  }
+
+  &--basic {
+    padding: 2.1rem 3%;
   }
 
   &__logo {
-    height: 100%;
     width: 16.7rem;
     fill: #e50914;
+
+    &--dynamic {
+      width: 16.7rem;
+    }
+
+    &--large { 
+      height: auto;
+      width: 16.7rem;
+    }
+
   }
 
   &__link {
@@ -39,38 +56,43 @@
 @media screen and (max-width: 87.500em) {
   .navSec {
     &__logo {
-      width: 13.4rem;
+      &--dynamic {
+        width: 13.4rem;
+      }
     }
   }
 }
 
 @media screen and (max-width: 60em) {
   .navSec {
-    padding: 2.5rem 4.5rem 0 4.5rem;
-
-    &--borderBtm {
-      padding: 2.5rem 5.6rem;
+    &--main {
+      padding: 2.5rem 4.5rem 0 4.5rem;
     }
 
     &__logo {
-      width: 10.8rem;
+      &--dynamic {
+        width: 10.8rem;
+      }
     }
   }
 }
 
 @media screen and (max-width: 34.375em) {
   .navSec {
-
-    padding: 2rem 10% 0 10%;
-
-    &--borderBtm {
+    &--main {
+      padding: 2rem 10% 0 10%;
+    }
+    
+    &--light {
       min-height: 4.5rem;
       padding: 0 3%;
     }
 
     &__logo {
-      width: 25%;
-
+      &--dynamic {
+        width: 25%;
+      }
+      
       &--small {
         width: 16%;
       }
